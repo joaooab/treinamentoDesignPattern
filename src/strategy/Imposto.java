@@ -2,6 +2,6 @@ package strategy;
 
 interface Imposto {
 
-    Double calcula();
+    Double calcula(final Orcamento orcamento);
 
 }
