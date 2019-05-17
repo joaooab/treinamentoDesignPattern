@@ -2,12 +2,13 @@ package chain;
 
 class CalculadorDeDescontos {
     Double calcular(Orcamento orcamento) {
-        if (orcamento.getItens().size() > 5) {
-            return orcamento.getValor() * 0.1;
-        } else if (orcamento.getValor() > 500) {
-            return orcamento.getValor() * 0.07;
-        }
+        Desconto d1 = new DescontoPorMaisDeCincoItens();
+        Desconto d2 = new DescontoPorMaisDeQuinhentosReais();
+        Desconto d3 = new SemDesconto();
 
-        return 0d;
+        d1.setProximo(d2);
+        d2.setProximo(d3);
+
+        return d1.desconta(orcamento);
     }
 }
