@@ -2,13 +2,19 @@ package template;
 
 import chain.Orcamento;
 
-class ICPP implements Imposto {
+class ICPP extends TemplateDeImpostoCondicional {
     @Override
-    public Double calcula(Orcamento orcamento) {
-        if(orcamento.getValor() > 500) {
-            return orcamento.getValor() * 0.07;
-        } else {
-            return orcamento.getValor() * 0.05;
-        }
+    Boolean isUtilizaMaiorTaxacao(Orcamento orcamento) {
+        return orcamento.getValor() > 500;
+    }
+
+    @Override
+    Double maximaTaxacao(Orcamento orcamento) {
+        return orcamento.getValor() * 0.07;
+    }
+
+    @Override
+    Double minimaTaxacao(Orcamento orcamento) {
+        return orcamento.getValor() * 0.05;
     }
 }

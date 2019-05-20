@@ -3,14 +3,21 @@ package template;
 import chain.Item;
 import chain.Orcamento;
 
-class IKCV implements Imposto {
+class IKCV extends TemplateDeImpostoCondicional {
     @Override
-    public Double calcula(Orcamento orcamento) {
-        if(orcamento.getValor() > 500 && temItemMaiorQuem100Reais(orcamento)) {
-            return orcamento.getValor() * 0.10;
-        } else {
-            return orcamento.getValor() * 0.06;
-        }
+    Boolean isUtilizaMaiorTaxacao(Orcamento orcamento) {
+        return orcamento.getValor() > 500 && temItemMaiorQuem100Reais(orcamento);
+    }
+
+    @Override
+    Double maximaTaxacao(Orcamento orcamento) {
+        return orcamento.getValor() * 0.10;
+    }
+
+
+    @Override
+    Double minimaTaxacao(Orcamento orcamento) {
+        return orcamento.getValor() * 0.06;
     }
 
     private boolean temItemMaiorQuem100Reais(Orcamento orcamento) {
