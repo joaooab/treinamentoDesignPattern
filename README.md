@@ -1,5 +1,6 @@
 # Organização:
-Os códigos estão separados por pastas de acordo com o assunto
+Os códigos estão separados por pastas de acordo com o assunto.
+
 Para mais informações acessa a [apresentação](apresentacao-PPT.pdf)
 
 # Branchs:
