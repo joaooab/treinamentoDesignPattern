@@ -1,7 +1,7 @@
 # Organização:
 Os códigos estão separados por pastas de acordo com o assunto.
 
-Para mais informações acessa a [apresentação](apresentacao-PPT.pdf)
+Para mais informações acesse a [apresentação](apresentacao-PPT.pdf)
 
 # Branchs:
 ## Master:
